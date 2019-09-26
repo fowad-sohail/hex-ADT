@@ -6,37 +6,6 @@
  *
  */
 public class HexNumber {
-	/*
-	 * 5. Encapsulation. Will you need/want private methods?
-		 * The only method I made private was the answer to number 4. 
-		 * Other methods don't need to be private because it allows users to use the 
-		 * methods and constructors that they need to. 
-		 * The answer to number 4 uses the defined math operation methods to 
-		 * find the answer to (A + (40 / 4) - 14) * 2 in hex.
-
-	
-	 *    7. Build and implement a custom exception to prevent clients from instantiating invalid hex numbers like "G2". 
-	 *    What would a good superclass be?
-	 	* A good superclass for this custom exception is the Exception class. This is because we are creating a 
-	 	* custom checked exception. This an exception that needs to be treated explicity to stop users from creating
-	 	* invalid HexNumbers. This also is not an exception thrown at runtime and therefore is not a custom unchecked
-	 	* exception, which would extend the RunTimeException class.
-		 
-	 *  * 8. If you are bulding a cohesive abstract data type, is there anything else worth including?
-		 * Using interfaces to define an ADT is worth including. This allows us to have multiple 
-		 * implementations of the same ADT in the same program. For instance, if instead of Hex, 
-		 * we made a binary ADT, an interface would allow us to define two similar ADTs for signed 
-		 * and unsigned binary numbers. 
-		 * In signed binary, the last bit defines if the number is positive or negative. So an ADT
-		 * for signed binary could be its own class and another for unsigned binary. Both of these classes 
-		 * would implement the same interface.
-		 * This would also force all of the methods of the interface to be defined, meaning the only place 
-		 * for errors is in the implementations of those methods.
-		 * 
-		 * Other things worth including are: isDecimal() because we have isHex() and should have the other corresponding method as well.
-		 * 
-	 * 
-	 */
 
 	//instance variables
 	private String hexValue;
@@ -219,14 +188,6 @@ public class HexNumber {
 	 * @return True if potentialHexString is valid for a hexadecimal value
 	 */
 	public static boolean isHex(String potentialHexString) {
-		/*
-		 * 6. Why make this validation method static?
-			 * We make this validation check static so that we don't have to have an instance
-			 * of HexNumber to call this method. If we already have a HexNumber instance, its
-			 * hexValue instance variable is already valid. Instead, we write this validation
-			 * with a String parameter so that we can check validity before trying to create
-			 * a HexNumber object.
-		 */
 		
 		String digits = "0123456789ABCDEF";		//as long as the characters of potentialHexString 
 												//are in this String (0-9, A-F), it's valid
@@ -247,7 +208,6 @@ public class HexNumber {
 	}
 	
 	/**
-	 * Number 4 on the assignment pdf.
 	 * Uses the add(), subtract(), multiply() and divide() methods to calculate (A + (40/4) - 14) * 2 in hexadecimal
 	 * @return The HexNumber object representing (A + (40/4) - 14) * 2
 	 * @throws InvalidHexException If invalid Strings are used to create HexNumber objects
